@@ -1,0 +1,79 @@
+generated: '2026-09-06'
+method: searched
+source: https://sellerfusion.io/pricing
+name: Sellerfusion (Acquco) plans and pricing
+company: Acquco
+product: Sellerfusion
+currency: null
+billing_period: null
+plan_count: 3
+pricing_published: false
+note: >-
+  Sellerfusion publishes three named tiers segmented by the customer's annual revenue, but no
+  price, quota or overage figure for any of them — every tier's call to action is "Contact Us
+  for Pricing" and the page routes to a custom-proposal form. Acquco itself (acqu.co) sells
+  brand acquisitions, not a subscription, and publishes no pricing at all.
+plans:
+- name: Starter
+  price: null
+  price_model: contact-sales
+  currency: null
+  billing_period: null
+  segment: brands doing under $1M/year
+  included:
+  - Core analytics dashboard with key metrics
+  - Account health monitoring and alerts
+  - Basic inventory tracking and reporting
+  - Monthly performance reports
+  - Email support with 24-hour response time
+  limits:
+    support_response: 24 hours
+  api_access: false
+- name: Growth
+  price: null
+  price_model: contact-sales
+  currency: null
+  billing_period: null
+  segment: brands doing $1M-$10M/year
+  most_popular: true
+  included:
+  - Full analytics suite with custom dashboards
+  - Automated inventory replenishment
+  - PPC campaign management and optimization
+  - Financial reconciliation and fee auditing
+  - Listing optimization and A+ Content
+  - Dedicated account manager
+  - Weekly performance reviews
+  api_access: false
+- name: Enterprise
+  price: null
+  price_model: contact-sales
+  currency: null
+  billing_period: null
+  segment: brands doing $10M+/year
+  included:
+  - Everything in Growth
+  - Custom API integrations and data pipelines
+  - Multi-marketplace management
+  - NetSuite ERP integration
+  - Priority support with dedicated team
+  - Custom reporting and executive dashboards
+  - Multi-subsidiary and international support
+  api_access: bespoke
+  api_note: >-
+    "Custom API integrations and data pipelines" is delivered as bespoke professional work at
+    the top tier; there is no self-serve API, no published contract and no developer signup.
+free_tier:
+  offered: false
+  note: >-
+    The site header carries a "Free Sign Up" button, but there is no self-service registration
+    route — https://app.sellerfusion.io/auth/sign_up returns 404 and only /auth/sign_in exists.
+x-evidence:
+  fetched: '2026-09-06'
+  urls:
+  - url: https://sellerfusion.io/pricing
+    status: 200
+  - url: https://app.sellerfusion.io/auth/sign_in
+    status: 200
+  - url: https://app.sellerfusion.io/auth/sign_up
+    status: 404

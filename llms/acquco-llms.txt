@@ -1,0 +1,84 @@
+# Acquco
+
+> Acquco is a New York City based acquirer and operator of Amazon third-party (FBA) e-commerce
+> brands, founded in 2020 by former Amazon operators Raunak Nirmal and Haumin Lum. It buys
+> established Amazon seller businesses (average close ~23 days), migrates them onto its own
+> operating stack and scales them across Amazon, Walmart, Target Plus and DTC channels. That
+> stack is productized as Sellerfusion, a multi-marketplace seller operations platform.
+
+Provenance: generated 2026-09-06 by the API Evangelist enrichment pipeline from this repository's
+apis.yml and artifacts. Acquco serves no /llms.txt of its own (https://www.acqu.co/llms.txt 404,
+https://sellerfusion.io/llms.txt 404).
+
+## API posture
+
+Acquco is an API CONSUMER, not an API producer. As of 2026-09-06 it publishes:
+
+- No public API, developer portal or API reference
+- No OpenAPI, Swagger, GraphQL SDL, AsyncAPI, Protobuf or WSDL contract on any host probed
+  (acqu.co, www.acqu.co, sellerfusion.io, app.sellerfusion.io, api.sellerfusion.io)
+- No MCP server, no A2A agent card, no /.well-known documents of any kind
+- No first-party SDK, CLI or package in any public registry
+- No webhooks, no changelog, no status page
+
+The Sellerfusion Enterprise tier advertises "custom API integrations and data pipelines" — bespoke,
+sales-gated integration work rather than a published API.
+
+## Products
+
+- [Sellerfusion](https://sellerfusion.io/): all-in-one Amazon seller platform ("powered by
+  Acquco") — analytics, automations, monitors, machine learning, A/B testing, PPC management,
+  financial reconciliation. Application at https://app.sellerfusion.io/ (sign-in only; no public
+  self-service sign-up).
+- Brand acquisition: Acquco buys Amazon FBA businesses; sellers start at
+  [Get Evaluated](https://www.acqu.co/get-evaluated).
+
+## APIs Acquco consumes (Sellerfusion integrations)
+
+- Amazon Selling Partner API (SP-API) — core data pipeline; Sellerfusion is a registered
+  developer in the Amazon Selling Partner Appstore
+- Amazon Seller Central (sales, inventory, advertising, settlements; US, CA, MX, UK, DE and more)
+- Shopify (multi-store orders, inventory, unified analytics)
+- Walmart Marketplace / Walmart Fulfillment Services
+- Target Plus
+- Oracle NetSuite ERP (two-way, via SuiteQL and REST)
+
+## Security and compliance
+
+- [Security & Trust](https://sellerfusion.io/security): AES-256 at rest, TLS 1.2+ in transit,
+  least-privilege access with MFA, third-party penetration testing, NIST SP 800-53 IR-8 incident
+  response plan, 15-minute critical initial response
+- Vulnerability disclosure: email security@sellerfusion.io; acknowledged within one business day;
+  researcher credit offered; no bug bounty. No /.well-known/security.txt is served
+- Compliance claimed (self-attested, no audited certification named): Amazon Data Protection
+  Policy, GDPR (72-hour breach notification), CCPA (privacy@sellerfusion.io)
+- Breach notification to Amazon within 24 hours per the Amazon Data Protection Policy
+
+## Pricing
+
+- [Sellerfusion pricing](https://sellerfusion.io/pricing): three tiers — Starter (<$1M/yr),
+  Growth ($1M-$10M/yr), Enterprise ($10M+/yr). Every tier is "Contact Us for Pricing"; no price,
+  quota or overage figure is published.
+
+## Company
+
+- [Website](https://www.acqu.co/)
+- [About](https://www.acqu.co/about-us)
+- [Why Acquco](https://www.acqu.co/why-acquco)
+- [For sellers](https://www.acqu.co/seller-page)
+- [For partners](https://www.acqu.co/partner-solution)
+- [For brokers](https://www.acqu.co/broker-solution)
+- [Careers](https://www.acqu.co/careers)
+- [Newsroom](https://www.acqu.co/newsroom)
+- [Resources / blog](https://www.acqu.co/resources)
+- [Terms of use](https://www.acqu.co/terms-of-use)
+- [Privacy policy](https://www.acqu.co/privacy-policy)
+- [GitHub](https://github.com/acquco)
+- Contact: info@acqu.co
+
+## Optional
+
+- [Help center](https://sellerfusion.io/helpcenter)
+- [Case studies](https://sellerfusion.io/case-studies)
+- [Integrations](https://sellerfusion.io/integrations)
+- [EquityZen listing](https://equityzen.com/company/acquco/) (secondary-market profile, third party)

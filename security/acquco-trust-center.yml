@@ -1,0 +1,74 @@
+generated: '2026-09-06'
+method: searched
+source: https://sellerfusion.io/security
+name: Acquco / Sellerfusion Security & Trust
+company: Acquco
+trust_center:
+  published: true
+  url: https://sellerfusion.io/security
+  hosted_on: first-party page (not a third-party trust platform)
+  dedicated_subdomain: false
+  probed:
+  - url: https://trust.acqu.co/
+    status: 0
+    note: host does not resolve
+  - url: https://status.sellerfusion.io/
+    status: 404
+    note: >-
+      resolves to a Kubernetes ingress serving a self-signed "Kubernetes Ingress Controller
+      Fake Certificate" and a 404 — not a status page
+  page_last_updated: '2026-04-08'
+certifications:
+  audited_certifications: []
+  note: >-
+    No SOC 2, ISO 27001, PCI DSS, HIPAA or FedRAMP certification is claimed anywhere on the
+    page. What is published is a self-attested program aligned to frameworks, plus
+    marketplace and privacy-regulation compliance.
+frameworks_referenced:
+- id: nist-sp-800-53
+  name: NIST SP 800-53
+  claim: security program and incident response plan built on / structured against it
+  audited: false
+- id: amazon-sp-api-security-controls
+  name: Amazon SP-API security control guidance
+  claim: security program built on it
+  audited: false
+compliance_programs:
+- id: amazon-dpp
+  name: Amazon Data Protection Policy
+  status: claimed compliant
+  detail: >-
+    Registered developer in the Amazon Selling Partner Appstore; compliant with the Amazon
+    Data Protection Policy, SP-API security control guidance and the Solution Provider
+    Agreement.
+- id: gdpr
+  name: General Data Protection Regulation
+  status: claimed compliant
+  detail: 72-hour supervisory-authority notification commitment for EU personal data breaches.
+- id: ccpa
+  name: California Consumer Privacy Act
+  status: claimed compliant
+  detail: California residents exercise privacy rights via privacy@sellerfusion.io.
+security_program:
+  encryption_at_rest: AES-256
+  encryption_in_transit: TLS 1.2 or higher
+  key_management: dedicated key management systems, periodic rotation
+  access_control: least privilege, MFA on all accounts, periodic access reviews
+  vulnerability_management: ongoing scanning, periodic third-party penetration testing
+  network: segmented networks, IDS/IPS, anti-malware, credential-exposure monitoring
+  logging: centralized log collection, retention per compliance requirements
+  personnel: security awareness training, background checks, confidentiality agreements
+data_retention:
+  policy_published: true
+  pii: retained only as long as necessary per the Amazon Data Protection Policy, then securely deleted
+  deletion_sla: permanent secure deletion within 30 days of a deletion request unless legally mandated
+  backups: AES-256 encrypted at rest, geographically replicated, same retention as primary data
+  classification: PII tagged separately from non-PII at the storage layer
+contacts:
+  security: security@sellerfusion.io
+  privacy: privacy@sellerfusion.io
+x-evidence:
+  fetched: '2026-09-06'
+  url: https://sellerfusion.io/security
+  http_status: 200
+  content_type: text/html

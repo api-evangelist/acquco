@@ -1,17 +1,43 @@
 aid: acquco
 name: Acquco
-description: 'Acquco is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Acquco is a New York City based acquirer and operator of Amazon third-party
+  (FBA) e-commerce brands, founded in 2020 by former Amazon operators Raunak Nirmal and
+  Haumin Lum and backed by roughly $160M in Series A equity and debt from CoVenture,
+  Crossbeam and Crosslink Capital. The company buys established Amazon seller businesses —
+  closing in an average of about 23 days — then migrates them onto its own operating stack
+  and scales them across Amazon, Walmart, Target Plus and DTC channels. That stack is
+  productized as Sellerfusion (sellerfusion.io, "powered by Acquco"), a multi-marketplace
+  seller operations platform for analytics, automation, monitoring, PPC and financial
+  reconciliation, which integrates with Amazon Seller Central and the Amazon Selling Partner
+  API (SP-API), Shopify, Walmart Marketplace, Target Plus and NetSuite ERP. Acquco is
+  therefore an API CONSUMER rather than an API producer: it publishes no public API,
+  developer portal, OpenAPI/GraphQL contract, SDK or webhook surface of its own, and its
+  Sellerfusion enterprise tier offers "custom API integrations" only as bespoke, sales-gated
+  work. It does publish a substantive Security & Trust page covering its security program,
+  incident response and Amazon DPP / GDPR / CCPA compliance posture.'
+image: https://cdn.prod.website-files.com/5e57b021f53be6722a091469/5e5ff35e34ad5de3778fbc80_acquco-fav-lg.png
 url: https://raw.githubusercontent.com/api-evangelist/acquco/refs/heads/main/apis.yml
+position: Consuming
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profile
+x-tier-reason: no-api-surface
 specificationVersion: '0.20'
 created: '2026-09-06'
 modified: '2026-09-06'
 tags:
 - Company
+- E-Commerce
+- Amazon
+- Marketplaces
+- Amazon FBA
+- Aggregator
+- Mergers And Acquisitions
+- Seller Tools
+- Analytics
+- Retail
+- SaaS
+- New York
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +45,107 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/acquco-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/acquco
+  url: https://www.acqu.co/
+- type: About
+  url: https://www.acqu.co/about-us
+- type: Solutions
+  name: Sellerfusion — Acquco's Amazon seller operations platform
+  url: https://sellerfusion.io/
+- type: Integrations
+  name: Sellerfusion integrations (Amazon SP-API, Shopify, Walmart, Target Plus, NetSuite)
+  url: https://sellerfusion.io/integrations
+- type: Services
+  url: https://sellerfusion.io/services
+- type: CaseStudies
+  url: https://sellerfusion.io/case-studies
+- type: Pricing
+  url: https://sellerfusion.io/pricing
+- type: Plans
+  url: plans/acquco-plans-pricing.yml
+- type: Login
+  name: Sellerfusion application sign-in (no public self-service sign-up)
+  url: https://app.sellerfusion.io/auth/sign_in
+- type: HelpCenter
+  url: https://sellerfusion.io/helpcenter
+- type: Support
+  url: https://sellerfusion.io/contact
+- type: ContactUs
+  url: https://www.acqu.co/get-evaluated
+- type: Partners
+  url: https://www.acqu.co/partner-solution
+- type: Careers
+  url: https://www.acqu.co/careers
+- type: Newsroom
+  url: https://www.acqu.co/newsroom
+- type: Blog
+  url: https://www.acqu.co/resources
+- type: TermsOfService
+  url: https://www.acqu.co/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.acqu.co/privacy-policy
+- type: GitHubOrganization
+  url: https://github.com/acquco
+- type: LinkedIn
+  url: https://www.linkedin.com/company/acquco
+- type: Twitter
+  url: https://twitter.com/acquco
+- type: YouTube
+  url: https://www.youtube.com/channel/UCadvoB17oc15G-YTc5sXvEQ
+- type: x-secondary-market-listing
+  name: EquityZen pre-IPO listing (third-party venue, not an Acquco page)
+  url: https://equityzen.com/company/acquco/
+- type: Security
+  url: security/acquco-vulnerability-disclosure.yml
+- type: VulnerabilityDisclosure
+  url: security/acquco-vulnerability-disclosure.yml
+- type: TrustCenter
+  url: security/acquco-trust-center.yml
+- type: Compliance
+  url: security/acquco-trust-center.yml
+- type: Conformance
+  url: conformance/acquco-conformance.yml
+- type: LLMsTxt
+  url: llms/acquco-llms.txt
+- type: x-well-known-probe
+  name: Well-known document probe (all paths 404 — recorded absence, not a served surface)
+  url: well-known/acquco-well-known.yml
+- type: x-packages-probe
+  name: Package registry search (no first-party SDK exists)
+  url: packages/acquco-packages.yml
+- type: x-rate-limits-probe
+  name: Rate-limit search (no public API, so no published limits)
+  url: rate-limits/acquco-rate-limits.yml
+x-enrichment:
+  date: '2026-09-06'
+  status: minimal
+  artifacts_added: 9
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Acquco buys and operates Amazon FBA brands, and its one software product — Sellerfusion,
+    "powered by Acquco" — is a seller-operations SaaS that CONSUMES Amazon SP-API, Shopify,
+    Walmart, Target Plus and NetSuite while publishing nothing itself: no developer portal, no
+    spec at any discovery path on five probed hosts, and its own api.sellerfusion.io answers
+    every one of them with a JSON 404 from behind a self-signed certificate issued to
+    scraper-proxy.easychamp.com.
+  evidence:
+  - url: https://api.sellerfusion.io/openapi.json
+    status: 404
+  - url: https://sellerfusion.io/openapi.json
+    status: 404
+  - url: https://www.acqu.co/openapi.json
+    status: 404
+  - url: https://www.acqu.co/.well-known/agent-card.json
+    status: 404
+  - url: https://sellerfusion.io/.well-known/agent-card.json
+    status: 404
+  - url: https://sellerfusion.io/llms.txt
+    status: 404
+  - url: https://app.sellerfusion.io/auth/sign_up
+    status: 404
+  checked: '2026-09-06'

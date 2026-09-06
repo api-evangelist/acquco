@@ -1,0 +1,58 @@
+generated: '2026-09-06'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts (probe-domain-security.py), extended 2026-09-06
+  with the sellerfusion.io hosts, which are first-party Acquco surfaces but are not reachable from the
+  Website pointer the script walks
+hosts:
+- host: www.acqu.co
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 26 16:48:19 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: sellerfusion.io
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 28 16:44:04 2026 GMT
+  hsts: false
+  hsts_max_age: null
+- host: app.sellerfusion.io
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 12 15:30:02 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: api.sellerfusion.io
+  https: false
+  tls_version: null
+  cert_expires: Apr 14 19:17:30 2036 GMT
+  hsts: false
+  hsts_max_age: null
+  note: Resolves (CNAME demo-stby01.sellerfusion.io, 5.161.49.75) and serves a JSON API 404 envelope,
+    but presents a SELF-SIGNED certificate for CN=scraper-proxy.easychamp.com — TLS validation fails for
+    any client. No spec is served on it (/openapi.json, /swagger.json, /api-docs, /docs, /graphql all
+    404).
+- host: status.sellerfusion.io
+  https: false
+  tls_version: null
+  cert_expires: null
+  hsts: false
+  hsts_max_age: null
+  note: Resolves (20.118.181.223) but presents the default 'Kubernetes Ingress Controller Fake Certificate'
+    and returns an nginx 404 — an exposed ingress, not a status page.
+domains:
+- domain: acqu.co
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: false
+  note: _dmarc.acqu.co is a CNAME to acqu.co.hosted.dmarc-report.com, which returns no TXT record — a
+    dangling DMARC delegation, so no DMARC policy is actually published. No DNSKEY (no DNSSEC) and no
+    CAA record.
+- domain: sellerfusion.io
+  dnssec: true
+  caa: []
+  spf: true
+  dmarc: false
+  note: DNSSEC signed (2 DNSKEY records). No CAA. SPF v=spf1 include:_spf.google.com -all. No _dmarc TXT
+    record.

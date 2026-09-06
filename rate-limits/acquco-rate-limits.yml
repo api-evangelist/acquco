@@ -1,0 +1,21 @@
+generated: '2026-09-06'
+method: searched
+source: https://sellerfusion.io/pricing, https://sellerfusion.io/helpcenter, https://www.acqu.co/
+name: Acquco rate limits
+company: Acquco
+limit_count: 0
+headers_published: []
+status_code_on_exhaustion: null
+note: >-
+  Not applicable rather than undocumented: Acquco exposes no public API, so there is no rate
+  limit to publish. Nothing on acqu.co, sellerfusion.io or the Sellerfusion help center states a
+  quota, throttle, burst allowance or RateLimit/X-RateLimit/Retry-After response header. The
+  rate limits that actually bind this business are Amazon SP-API's, on the consuming side.
+limits: []
+x-evidence:
+  fetched: '2026-09-06'
+  urls:
+  - url: https://sellerfusion.io/pricing
+    status: 200
+  - url: https://sellerfusion.io/helpcenter
+    status: 200

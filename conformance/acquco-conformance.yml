@@ -1,0 +1,103 @@
+generated: '2026-09-06'
+method: searched
+source: https://sellerfusion.io/security, https://sellerfusion.io/integrations
+name: Acquco / Sellerfusion conformance
+company: Acquco
+note: >-
+  Acquco publishes no API contract of its own, so there is no spec to derive API-style
+  conformance from. Everything below is either a compliance claim published on the
+  Sellerfusion Security & Trust page, or a standard/API Sellerfusion CONSUMES as an
+  integration — recorded as consumed, never as published.
+conformance:
+- id: amazon-dpp
+  name: Amazon Data Protection Policy
+  conforms: true
+  basis: provider-claimed
+  evidence: https://sellerfusion.io/security
+- id: gdpr
+  name: EU General Data Protection Regulation
+  conforms: true
+  basis: provider-claimed
+  evidence: https://sellerfusion.io/security
+- id: ccpa
+  name: California Consumer Privacy Act
+  conforms: true
+  basis: provider-claimed
+  evidence: https://sellerfusion.io/security
+- id: nist-sp-800-53
+  name: NIST SP 800-53 (security program + IR-8 incident response)
+  conforms: true
+  basis: provider-claimed alignment, not audited
+  evidence: https://sellerfusion.io/security
+- id: tls12
+  name: TLS 1.2+ in transit
+  conforms: true
+  basis: provider-claimed
+  evidence: https://sellerfusion.io/security
+- id: oauth2
+  name: OAuth 2.0
+  conforms: false
+  basis: no published authorization surface; no /.well-known/oauth-authorization-server or
+    /.well-known/openid-configuration on any Acquco or Sellerfusion host (all 404)
+  evidence: well-known/acquco-well-known.yml
+- id: openapi
+  name: OpenAPI
+  conforms: false
+  basis: no OpenAPI/Swagger document served on any host probed
+  evidence: well-known/acquco-well-known.yml
+- id: rfc9457
+  name: RFC 9457 Problem Details
+  conforms: false
+  basis: no public API surface to evaluate
+  evidence: https://sellerfusion.io/integrations
+- id: rfc9116
+  name: RFC 9116 security.txt
+  conforms: false
+  basis: a disclosure program is published as an HTML page, but no /.well-known/security.txt
+    is served on any host
+  evidence: security/acquco-vulnerability-disclosure.yml
+domain_standards:
+  published: []
+  note: >-
+    REWARD-ONLY dimension, and Acquco publishes no contract, so nothing is asserted here. The
+    domain standard in this market is Amazon's Selling Partner API (SP-API); Acquco is on the
+    CONSUMING side of it.
+  consumed:
+  - id: amazon-sp-api
+    name: Amazon Selling Partner API (SP-API)
+    role: consumed
+    detail: >-
+      "Direct API integration via Amazon's Selling Partner API for real-time order data,
+      inventory updates, catalog management, and automated reporting. Powers our core data
+      pipeline." Sellerfusion is a registered developer in the Amazon Selling Partner Appstore.
+    evidence: https://sellerfusion.io/integrations
+  - id: amazon-seller-central
+    name: Amazon Seller Central
+    role: consumed
+    evidence: https://sellerfusion.io/integrations
+  - id: shopify-admin-api
+    name: Shopify
+    role: consumed
+    evidence: https://sellerfusion.io/integrations
+  - id: walmart-marketplace
+    name: Walmart Marketplace / WFS
+    role: consumed
+    evidence: https://sellerfusion.io/integrations
+  - id: target-plus
+    name: Target Plus marketplace
+    role: consumed
+    evidence: https://sellerfusion.io/integrations
+  - id: netsuite-suiteql-rest
+    name: Oracle NetSuite (SuiteQL + REST, two-way)
+    role: consumed
+    detail: >-
+      github.com/acquco/netsuite is a fork of jacobsvante/netsuite (async SuiteTalk SOAP/REST
+      client), last pushed 2022-01-21 — consumption tooling, not a first-party SDK.
+    evidence: https://sellerfusion.io/integrations
+x-evidence:
+  fetched: '2026-09-06'
+  urls:
+  - url: https://sellerfusion.io/security
+    status: 200
+  - url: https://sellerfusion.io/integrations
+    status: 200

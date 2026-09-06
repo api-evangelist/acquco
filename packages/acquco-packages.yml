@@ -1,0 +1,46 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  registry.npmjs.org search, pypi.org, rubygems.org, crates.io, api.github.com/orgs/acquco,
+  api.github.com/orgs/sellerfusion, https://sellerfusion.io/integrations
+name: Acquco packages
+company: Acquco
+package_count: 0
+official_sdk_count: 0
+packages: []
+note: >-
+  Acquco publishes no API, so there is no SDK to publish. No first-party package exists in any
+  registry searched. The only public code under either GitHub org is github.com/acquco/netsuite,
+  a FORK of jacobsvante/netsuite (async NetSuite SuiteTalk SOAP/REST client), last pushed
+  2022-01-21 — an internal consumption dependency, not a first-party client library, so it is
+  recorded here and deliberately NOT marked official. No SDKs pointer is wired into apis.yml.
+registries_searched:
+- registry: npm
+  query: acquco
+  results: 0
+- registry: npm
+  query: sellerfusion
+  results: 0
+- registry: pypi
+  package: sellerfusion
+  status: 404
+- registry: github
+  org: acquco
+  public_repos: 1
+  first_party_libraries: 0
+- registry: github
+  org: sellerfusion
+  public_repos: 0
+  first_party_libraries: 0
+related_forks:
+- name: acquco/netsuite
+  url: https://github.com/acquco/netsuite
+  official: false
+  first_party: false
+  fork_of: jacobsvante/netsuite
+  version: null
+  published: null
+  last_push: '2022-01-21'
+  note: >-
+    Fork, not an Acquco library; version/published are null because Acquco publishes no release
+    of it to any registry.
